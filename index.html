@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAY HARD</title>
+    <meta name="description" content="STAY HARD — personal study planner and weekly dashboard" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">MH</div>
+        </div>
+
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-target="plan-section">
+            <span class="icon">◫</span>
+            <span>Plan</span>
+          </button>
+          <button class="nav-item" data-target="subjects-section">
+            <span class="icon">◧</span>
+            <span>Subjects</span>
+          </button>
+          <button class="nav-item" data-target="goals-section">
+            <span class="icon">◎</span>
+            <span>Goals</span>
+          </button>
+          <button class="nav-item" data-target="progress-section">
+            <span class="icon">▤</span>
+            <span>Progress</span>
+          </button>
+          <button class="nav-item" data-target="settings-modal-trigger">
+            <span class="icon">⚙</span>
+            <span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-note">
+          <span class="label">FOCUS</span>
+          <span class="text">Build tomorrow with discipline.</span>
+        </div>
+      </aside>
+
+      <main class="main-panel" id="plan-section">
+        <header class="topbar panel-tech">
+          <div class="identity-wrap">
+            <span class="identity-name">M. HARIDY</span>
+          </div>
+
+          <nav class="top-nav" aria-label="Section navigation">
+            <span>DISCIPLINE</span>
+            <span>FOCUS</span>
+            <span>PROGRESS</span>
+          </nav>
+
+          <div class="header-meta">
+            <span class="tiny-tag">// better version...</span>
+            <span class="tiny-tag">// every day</span>
+          </div>
+        </header>
+
+        <section class="hero panel-tech">
+          <div class="hero-info panel-mini ">
+            <div class="terminal-line">&gt; user@study:~$ plan --week</div>
+            <ul class="meta-lines">
+              <li>1 <span>THIRD SECONDARY</span></li>
+              <li>2 <span>AL-AZHAR</span></li>
+              <li>3 <span>SCIENTIFIC TRACK</span></li>
+              <li>4 <span>2026 - 2027</span></li>
+            </ul>
+            <div class="mini-progress">
+              <div class="progress-bar"><span id="header-progress-fill"></span></div>
+              <div class="progress-text"><span>[</span><span id="header-progress-value">0</span><span> / 14 ]</span></div>
+            </div>
+          </div>
+
+          <div class="title-stack">
+            <h1 class="main-title">STAY HARD</h1>
+            <div class="subtitle">WEEKLY SCHEDULE</div>
+          </div>
+
+          <aside class="subject-quick panel-mini">
+            <div class="subject-count">14</div>
+            <div class="subject-row"><span>SUBJECTS</span></div>
+            <div class="subject-groups">
+              <div class="cat"><span class="count">6</span> <span>SCIENCE</span></div>
+              <div class="cat"><span class="count">4</span> <span>ARABIC</span></div>
+              <div class="cat"><span class="count">4</span> <span>RELIGION</span></div>
+            </div>
+            <div class="quote">Small steps make big results.</div>
+          </aside>
+        </section>
+
+        <section id="week-grid" class="week-grid" aria-label="Weekly schedule"></section>
+
+        <section class="bottom-grid">
+          <div id="subjects-section" class="panel-tech card-box subjects-box">
+            <h2>SUBJECTS OVERVIEW (14)</h2>
+            <div id="subjects-overview" class="subjects-overview"></div>
+          </div>
+
+          <div class="panel-tech card-box routine-box">
+            <h2>DAILY ROUTINE</h2>
+            <ul id="routine-list" class="routine-list"></ul>
+            <div class="routine-footer">plan / focus / study / archive</div>
+          </div>
+
+          <div id="goals-section" class="panel-tech card-box goals-box">
+            <h2>WEEKLY GOALS</h2>
+            <ul id="goals-list" class="goals-list"></ul>
+            <div class="goal-meter-wrap">
+              <div class="goal-meter">
+                <div id="goal-ring" class="goal-ring"></div>
+                <div class="goal-ring-inner">
+                  <span id="goal-percent">0%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="settings-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close="settings-modal"></div>
+      <div class="modal-card panel-tech" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <div class="modal-header">
+          <h3 id="settings-title">Settings</h3>
+          <button class="close-modal" data-close="settings-modal" aria-label="Close settings">×</button>
+        </div>
+
+        <div class="settings-body">
+          <div class="setting-section">
+            <label>Student name</label>
+            <input id="student-name-input" type="text" />
+          </div>
+          <div class="setting-section">
+            <label>Academic year</label>
+            <input id="year-input" type="text" />
+          </div>
+          <div class="setting-section">
+            <label>Track</label>
+            <input id="track-input" type="text" />
+          </div>
+          <div class="setting-section">
+            <label>School</label>
+            <input id="school-input" type="text" />
+          </div>
+          <div class="setting-section">
+            <label>NUVIO URL</label>
+            <input id="nuvio-url-input" type="url" />
+          </div>
+
+          <div class="action-row">
+            <button id="export-data-btn" class="secondary-btn">Export JSON</button>
+            <button id="import-data-btn" class="secondary-btn">Import JSON</button>
+            <button id="reset-data-btn" class="danger-btn">Reset Planner</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input id="import-file-input" type="file" accept="application/json" hidden />
+
+    <a id="nuvio-link" class="nuvio-floating" href="https://mohammedharidy770.github.io/Nuvio/" target="_blank" rel="noreferrer noopener">NUVIO</a>
+
+    <div class="footer-identity panel-tech">
+      <div class="footer-title">STAY HARD</div>
+      <div class="footer-sub">M. HARIDY</div>
+      <div class="footer-year">2026 - 2027</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
